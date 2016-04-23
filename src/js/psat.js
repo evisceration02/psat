@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Layout from "./components/Layout";
+import Calculator from "./components/Calculator";
+import stateCutoffs from "./cutoffs";
 
 const app = document.getElementById('app');
 
-ReactDOM.render(<Layout />, app);
+ReactDOM.render(<Calculator stateCutoffs={stateCutoffs} />, app);
