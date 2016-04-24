@@ -1,6 +1,22 @@
 var concordance = {240: 1520, 239: 1520, 238: 1520, 237: 1510, 236: 1510, 235: 1510, 234: 1500, 233: 1500, 232: 1500, 231: 1490, 230: 1490, 229: 1490, 228: 1490, 227: 1480, 226: 1480, 225: 1480, 224: 1470, 223: 1470, 222: 1470, 221: 1460, 220: 1460, 219: 1460, 218: 1450, 217: 1450, 216: 1450, 215: 1440, 214: 1440, 213: 1440, 212: 1430, 211: 1430, 210: 1420, 209: 1420, 208: 1410, 207: 1410, 206: 1400, 205: 1390, 204: 1390, 203: 1390, 202: 1380, 201: 1370, 200: 1370, 199: 1360 }
 
-var cutoffs = {
+Object.keys(concordance).forEach((oldSelectionIndex) => {
+	let newSelectionIndex = Math.round((concordance[oldSelectionIndex] / 10) * 1.5)
+	concordance[oldSelectionIndex] = newSelectionIndex;
+});
+
+var commendedCutoffs = {
+	2010: 201,
+	2011: 201,
+	2012: 202,
+	2013: 200,
+	2014: 203,
+	2015: 201,
+	2016: 202,
+	2017: 209
+};
+
+var stateCutoffs = {
     'Alabama': { 2008: 209, 2009: 209, 2010: 208, 2011: 210, 2012: 211, 2013: 209, 2014: 211, 2015: 207, 2016: 209 },
     'Alaska': { 2008: 213, 2009: 212, 2010: 211, 2011: 214, 2012: 212, 2013: 204, 2014: 212, 2015: 210, 2016: 206 },
     'Arizona': { 2008: 211, 2009: 209, 2010: 210, 2011: 209, 2012: 213, 2013: 212, 2014: 214, 2015: 213, 2016: 215 },
@@ -54,14 +70,14 @@ var cutoffs = {
     'Wyoming': { 2008: 200, 2009: 201, 2010: 201, 2011: 202, 2012: 204, 2013: 200, 2014: 203, 2015: 204, 2016: 202 },
 }
 
-Object.keys(cutoffs).forEach(state => {
-	Object.keys(cutoffs[state]).forEach(year => {
-		let cutoffScore = cutoffs[state][year];
-		cutoffs[state][year] = concordance[cutoffScore];
-	});
-});
+// Object.keys(stateCutoffs).forEach(state => {
+// 	Object.keys(stateCutoffs[state]).forEach(year => {
+// 		let cutoffScore = stateCutoffs[state][year];
+// 		stateCutoffs[state][year] = concordance[cutoffScore];
+// 	});
+// });
 
-export default cutoffs;
+export { stateCutoffs, commendedCutoffs };
 
 
 

@@ -9,9 +9,12 @@ export default class SelectState extends React.Component {
 
 	render() {
 		return (
+			<div>
+			<h4>1. Select your state</h4>
 			<select onChange={this.props.handleOnChange} value={this.props.chosenState}>
 				{this.options()}
 			</select>
+			</div>
 		);
 	}
 }

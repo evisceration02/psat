@@ -1,6 +1,8 @@
 import React from "react";
 import SelectState from "./SelectState";
-import ResultsTable from "./ResultsTable";
+import SelectionIndex from "./SelectionIndex";
+import CommendedCutoffs from "./CommendedCutoffs"
+import SemifinalistCutoffs from "./SemifinalistCutoffs";
 
 export default class Calculator extends React.Component {
 	constructor(props) {
@@ -30,7 +32,9 @@ export default class Calculator extends React.Component {
 					chosenState={this.state.chosenState}
 					listOfStates={this.listOfStates}
 					handleOnChange={this.handleOnChange.bind(this)} />
-				<ResultsTable cutoffsByYear={cutoffsByYear} />
+				<SelectionIndex />
+				<CommendedCutoffs commendedCutoffs={this.props.commendedCutoffs} />
+				<SemifinalistCutoffs cutoffsByYear={cutoffsByYear} />
 			</div>
 		);
 	}
