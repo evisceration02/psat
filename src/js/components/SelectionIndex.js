@@ -34,7 +34,7 @@ export default class SelectionIndex extends React.Component {
 
 	updateSelectionIndex() {
 		if (this.validateScores()) {
-			return (this.state.math / 10) + 2 * (this.state.readingAndWriting / 10);
+			return <b>{(this.state.math / 10) + 2 * (this.state.readingAndWriting / 10)}</b>;
 		} else {
 			return <span style={{color: 'red'}} >Please enter valid scores</span>;
 		}

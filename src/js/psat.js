@@ -1,8 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Calculator from "./components/Calculator";
-import { commendedCutoffs, stateCutoffs } from "./cutoffs";
+import { concordance, commendedCutoffs, stateCutoffs } from "./cutoffs";
 
 const app = document.getElementById('app');
 
-ReactDOM.render(<Calculator commendedCutoffs={commendedCutoffs} stateCutoffs={stateCutoffs} />, app);
+// Years from which to base cutoff score projection, maximum of 7
+const YEARS_FOR_PROJECTION = 7;
+
+ReactDOM.render(
+	<Calculator concordance={concordance}
+							commendedCutoffs={commendedCutoffs}
+							stateCutoffs={stateCutoffs}
+							yearsForProjection={YEARS_FOR_PROJECTION} />, app);

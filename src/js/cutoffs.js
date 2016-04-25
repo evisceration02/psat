@@ -70,14 +70,7 @@ var stateCutoffs = {
     'Wyoming': { 2008: 200, 2009: 201, 2010: 201, 2011: 202, 2012: 204, 2013: 200, 2014: 203, 2015: 204, 2016: 202 },
 }
 
-// Object.keys(stateCutoffs).forEach(state => {
-// 	Object.keys(stateCutoffs[state]).forEach(year => {
-// 		let cutoffScore = stateCutoffs[state][year];
-// 		stateCutoffs[state][year] = concordance[cutoffScore];
-// 	});
-// });
-
-export { stateCutoffs, commendedCutoffs };
+export { concordance, stateCutoffs, commendedCutoffs };
 
 
 
