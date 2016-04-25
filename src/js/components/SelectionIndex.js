@@ -34,7 +34,7 @@ export default class SelectionIndex extends React.Component {
 
 	updateSelectionIndex() {
 		if (this.validateScores()) {
-			return <b>{(this.state.math / 10) + 2 * (this.state.readingAndWriting / 10)}</b>;
+			return (this.state.math / 10) + 2 * (this.state.readingAndWriting / 10);
 		} else {
 			return <span style={{color: 'red'}} >Please enter valid scores</span>;
 		}
@@ -42,18 +42,20 @@ export default class SelectionIndex extends React.Component {
 
 	render() {
 		return (
-			<div style={{marginBottom: '10px'}}>
-				<h4>2. Calculate your Selection Index</h4>
-
-				<div style={{marginBottom: '10px'}} >
-					<p>Your Selection Index is the number that is used to determine whether you qualify for recognition in the National Merit Scholarship Program.</p>
-					<p>You can find your Selection Index by looking in your PSAT Score Report or by using the calculator below.</p>
-					<span style={{width: '185px', display: 'inline-block'}} >Your Evidence-Based Reading and Writing Score (160 to 760):</span>
-					<input onChange={this.updateReadingWriting.bind(this)} /><br />
-					<span style={{width: '185px', display: 'inline-block'}} >Your Math Score (160 to 760):</span>
+			<div>
+				<h4>2. Calculate your Selection Index (SI)</h4>
+				<p>Your Selection Index is the number that's used to determine whether you qualify for recognition in the National Merit Scholarship Program.</p>
+				<p>You can find your Selection Index by looking in your PSAT Score Report or by using the calculator below.</p>
+				<div style={{marginBottom: '10px'}}>
+					<span style={{width: '430px', display: 'inline-block'}} >Your Evidence-Based Reading and Writing Score (160 to 760):</span>
+					<input onChange={this.updateReadingWriting.bind(this)} />
+				</div>
+				<div style={{marginBottom: '10px'}}>
+					<span style={{width: '430px', display: 'inline-block'}} >Your Math Score (160 to 760):</span>
 					<input onChange={this.updateMath.bind(this)} /><br />
 				</div>
-				Your NMSC Selection Index (48 to 228): {this.updateSelectionIndex()}
+				<b>Your NMSC Selection Index (48 to 228): {this.updateSelectionIndex()}</b>
+				<hr />
 			</div>
 		);
 	}

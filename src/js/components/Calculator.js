@@ -64,7 +64,7 @@ export default class Calculator extends React.Component {
 		});
 
 		let differences = yearsForProjection.map((year) => {
-			return convertedSemifinalistCutoffsCopy[year] - convertedCommendedCutoffsCopy[year];
+			return (convertedSemifinalistCutoffsCopy[year] - convertedCommendedCutoffsCopy[year]) - 1;
 		});
 
 		var sumOfDifferences = differences.reduce((sum, currentValue) => {
@@ -88,8 +88,7 @@ export default class Calculator extends React.Component {
 				<SelectionIndex />
 				<CommendedCutoffs
 					commendedCutoffs={this.props.commendedCutoffs}
-					convertedCommendedCutoffs={convertedCommendedCutoffs}
-					commendedYearsToConvert={this.commendedYearsToConvert} />
+					convertedCommendedCutoffs={convertedCommendedCutoffs} />
 				<SemifinalistCutoffs
 					cutoffsByYear={chosenStateCutoffs}
 					convertedSemifinalistCutoffs={convertedSemifinalistCutoffs}

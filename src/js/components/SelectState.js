@@ -14,6 +14,7 @@ export default class SelectState extends React.Component {
 			<select onChange={this.props.handleOnChange} value={this.props.chosenState}>
 				{this.options()}
 			</select>
+			<hr />
 			</div>
 		);
 	}
